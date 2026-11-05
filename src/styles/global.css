@@ -1,0 +1,100 @@
+/* =========================================================
+   EduSphere · global tokens
+   Palette is lifted from the login screen:
+   deep navy #14385a → indigo #3b2a7a → orchid #8c3a8f
+   with sky blue, pink and orange glows. Light areas use
+   pastel tints of those same hues.
+   ========================================================= */
+:root {
+  /* brand (deep) */
+  --navy-900: #0e2a47;
+  --navy-800: #14385a;
+  --navy-700: #1b4a72;
+  --navy-600: #245b8a;
+  --indigo-800: #3b2a7a;
+  --indigo-700: #4c2a85;
+  --orchid: #8c3a8f;
+
+  --accent: #2f8be0;
+  --accent-600: #1f74c4;
+  --pink: #f05fb2;
+  --orange: #ff9a3c;
+  --violet: #9b5cf6;
+  --green: #19b37a;
+  --red: #ec4a4a;
+
+  /* pastel fills + readable ink for each hue */
+  --blue-soft: #dcebff;    --blue-ink: #1f5fbf;
+  --violet-soft: #ebe2ff;  --violet-ink: #6a3fd0;
+  --pink-soft: #ffe0f0;    --pink-ink: #c2358a;
+  --orange-soft: #ffe8d0;  --orange-ink: #b4581a;
+  --green-soft: #d8f5e7;   --green-ink: #0f7e58;
+  --yellow-soft: #fff3c9;  --yellow-ink: #8a6a0c;
+  --cyan-soft: #d8f2fb;    --cyan-ink: #146f8c;
+  --rose-soft: #ffdde2;    --rose-ink: #b8324a;
+
+  /* gradients reused across pages */
+  --grad-brand: linear-gradient(135deg, #14385a 0%, #3b2a7a 55%, #8c3a8f 100%);
+  --grad-side: linear-gradient(180deg, #14385a 0%, #3b2a7a 62%, #5a2d82 100%);
+  --grad-action: linear-gradient(135deg, #2f8be0, #7a4fd8);
+
+  /* surfaces */
+  --bg: #f4f1fb;
+  --surface: #ffffff;
+  --surface-2: #f8f5fe;
+  --text: #1d1840;
+  --muted: #6f6a8f;
+  --border: #e8e2f5;
+  --shadow: 0 10px 30px rgba(59, 42, 122, 0.09);
+  --shadow-lg: 0 18px 44px rgba(59, 42, 122, 0.16);
+  --ring: 0 0 0 3px rgba(47, 139, 224, 0.28);
+  --radius: 16px;
+
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display: 'Fraunces', Georgia, serif;
+}
+
+[data-theme='dark'] {
+  --bg: #110e24;
+  --surface: #1b1737;
+  --surface-2: #241f47;
+  --text: #ece8fb;
+  --muted: #9d97c2;
+  --border: #322b5a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.5);
+
+  --blue-soft: rgba(47, 139, 224, 0.2);    --blue-ink: #8cc4ff;
+  --violet-soft: rgba(155, 92, 246, 0.22); --violet-ink: #c6a8ff;
+  --pink-soft: rgba(240, 95, 178, 0.2);    --pink-ink: #ff9fd3;
+  --orange-soft: rgba(255, 154, 60, 0.2);  --orange-ink: #ffc185;
+  --green-soft: rgba(25, 179, 122, 0.2);   --green-ink: #6fe0b4;
+  --yellow-soft: rgba(255, 211, 80, 0.18); --yellow-ink: #ffe08a;
+  --cyan-soft: rgba(56, 189, 230, 0.18);   --cyan-ink: #8adcf5;
+  --rose-soft: rgba(236, 74, 74, 0.2);     --rose-ink: #ff9aa8;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font-family: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+:focus-visible { outline: 0; box-shadow: var(--ring); border-radius: 10px; }
+
+::selection { background: rgba(155, 92, 246, 0.28); }
+* { scrollbar-width: thin; scrollbar-color: #c9bfe8 transparent; }
+
+.spin { animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
