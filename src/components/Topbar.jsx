@@ -20,7 +20,7 @@ export default function Topbar({ user, theme, onTheme, onMenu, onLogout }) {
       <div className="school">
         <span className="school-crest">E</span>
         <div>
-          <h1>EMET Mohanpur Public School</h1>
+          <h1>Our School</h1>
           <small>{roleLabel(user.role)} portal</small>
         </div>
       </div>
